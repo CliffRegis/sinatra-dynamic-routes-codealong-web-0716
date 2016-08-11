@@ -13,5 +13,15 @@ class App < Sinatra::Base
     "Hello #{@user_name}!"
   end
 
+  get '/goodbye/:name' do
+  	@person = params[:name]
+   "Goodbye #{@person}"
+  end
 
+  get '/multiply/:num1/:num2' do
+  	@num_first = params[:num1]
+  	@num_second = params[:num2]
+    @num_sum = @num_first.to_i * @num_second.to_i
+   "#{@num_sum}"
+  end 
 end
